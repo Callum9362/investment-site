@@ -40,9 +40,9 @@
     <div class="container">
       <div class="list-group">
       <a href="#" class="list-group-item disabled">BitCoin1 </a>
-      <a href="#" class="list-group-item disabled">BitCoin1</a>
-      <a href="#" class="list-group-item disabled">BitCoin1</a>
-      <a href="#" class="list-group-item disabled">BitCoin1</a>
+      <a href="#" class="list-group-item disabled">BitCoin2</a>
+      <a href="#" class="list-group-item disabled">BitCoin3</a>
+      <a href="#" class="list-group-item disabled">BitCoin4</a>
       </div>
     </div>
 
