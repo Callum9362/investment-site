@@ -1,7 +1,7 @@
 <template>
   <div id="app">
+    <Title />
     <Nav />
-    <Menu />
     <MarketSummary />
     <div class="container">
       <div class="row">
@@ -22,8 +22,8 @@
 </template>
 
 <script>
+import Title from './components/Title.vue'
 import Nav from './components/Nav.vue'
-import Menu from './components/Menu.vue'
 import MarketSummary from './components/MarketSummary.vue'
 import CryptoSearch from './components/CryptoSearch.vue'
 import QuickQuote from './components/QuickQuote.vue'
@@ -32,7 +32,7 @@ import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
-  components: { Nav, Menu, MarketSummary, CryptoSearch, QuickQuote,FinanceNews, Footer}
+  components: { Title, Nav, MarketSummary, CryptoSearch, QuickQuote,FinanceNews, Footer}
 }
 </script>
 
