@@ -20,27 +20,39 @@
     </div>
     <br />
 
-    <div class="container">
-          <div class="list-group">
-            <a href="#" class="list-group-item disabled">BitCoin1 </a>
-            <a href="#" class="list-group-item disabled">BitCoin1</a>
-            <a href="#" class="list-group-item disabled">BitCoin1</a>
-            <a href="#" class="list-group-item disabled">BitCoin1</a>
-            <a href="#" class="list-group-item disabled">BitCoin1</a>
-            <a href="#" class="list-group-item disabled">BitCoin1</a>
-            <a href="#" class="list-group-item disabled">BitCoin1</a>
-            <a href="#" class="list-group-item disabled">BitCoin1</a>
-            <a href="#" class="list-group-item disabled">BitCoin1</a>
-            <a href="#" class="list-group-item disabled">BitCoin1</a>
+    <div  class="container currency" >
+          <div v-for="currency in info" :key="currency.id" class="list-group currency">
+            <a href="#" class="list-group-item disabled">Bitcoin: {{currency.rate_float | currencydecimal}} {{currency.code}}</a>
           </div>
     </div>
   </section>
 </template>
 
 <script>
+
+const axios = require('axios');
+
 export default {
   name: "CryptoSearch",
   components: {},
+  data () {
+    return {
+      info: null
+    }
+  },
+  mounted(){
+
+     axios
+      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .then(response => (this.info = response.data.bpi))
+      .catch(error => console.log(error))
+
+  },
+  filters: {
+  currencydecimal (value) {
+    return value.toFixed(2)
+  }
+},
 };
 </script>
 
